@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   has_many :attendances
   has_many :users, through: :attendances
+  belongs_to :administrator, class_name 'User'
   validates_date :start_date,  :on_or_after => lambda { Date.current }, presence: true
  validates :duration, presence: true
   validate :duration_multiple_of_5?

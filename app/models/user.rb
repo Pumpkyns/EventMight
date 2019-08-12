@@ -7,4 +7,5 @@ class User < ApplicationRecord
     UserMailer.welcome_email(self).deliver_now
   end
 
+
 end
